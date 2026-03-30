@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import { Fab, Tooltip } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { useComponentVisibility } from "./ComponentVisibilityContext";
+import { useComponentId } from "./ComponentIdContext";
 
-export default function VisibilityToggleFAB() {
-  const { isGlobalVisible, toggleVisibility } = useComponentVisibility();
+export default function ComponentIdFAB() {
+  const { isGlobalVisible, toggleVisibility } = useComponentId();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

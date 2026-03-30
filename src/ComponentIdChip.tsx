@@ -3,14 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { Chip, Snackbar, Alert } from "@mui/material";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import { useComponentVisibility } from "./ComponentVisibilityContext";
+import { useComponentId } from "./ComponentIdContext";
 
-interface VisibilityChipProps {
+interface ComponentIdChipProps {
   componentId: string;
 }
 
-export default function VisibilityChip({ componentId }: VisibilityChipProps) {
-  const { isVisible } = useComponentVisibility();
+export default function ComponentIdChip({ componentId }: ComponentIdChipProps) {
+  const { isVisible } = useComponentId();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 

@@ -2,19 +2,19 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
-interface ComponentVisibilityContextType {
+interface ComponentIdContextType {
   isGlobalVisible: boolean;
   toggleVisibility: () => void;
   isVisible: (componentId: string) => boolean;
 }
 
-const ComponentVisibilityContext = createContext<
-  ComponentVisibilityContextType | undefined
+const ComponentIdContext = createContext<
+  ComponentIdContextType | undefined
 >(undefined);
 
 const STORAGE_KEY = "componentVisibility";
 
-export function ComponentVisibilityProvider({
+export function ComponentIdProvider({
   children,
 }: {
   children: ReactNode;
@@ -43,7 +43,7 @@ export function ComponentVisibilityProvider({
   };
 
   return (
-    <ComponentVisibilityContext.Provider
+    <ComponentIdContext.Provider
       value={{
         isGlobalVisible,
         toggleVisibility,
@@ -51,15 +51,15 @@ export function ComponentVisibilityProvider({
       }}
     >
       {children}
-    </ComponentVisibilityContext.Provider>
+    </ComponentIdContext.Provider>
   );
 }
 
-export function useComponentVisibility() {
-  const context = useContext(ComponentVisibilityContext);
+export function useComponentId() {
+  const context = useContext(ComponentIdContext);
   if (context === undefined) {
     throw new Error(
-      "useComponentVisibility must be used within a ComponentVisibilityProvider"
+      "useComponentId must be used within a ComponentIdProvider"
     );
   }
   return context;

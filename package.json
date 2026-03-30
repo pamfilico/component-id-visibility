@@ -1,0 +1,46 @@
+{
+  "name": "@pamfilico/component-id-visibility",
+  "version": "1.0.0",
+  "description": "Toggle component ID visibility overlay for React/Next.js apps with MUI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "@mui/material": ">=5",
+    "@mui/icons-material": ">=5",
+    "@emotion/react": ">=11",
+    "@emotion/styled": ">=11"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "react": "^19.0.0",
+    "@types/react": "^19",
+    "@mui/material": "^7.3.4",
+    "@mui/icons-material": "^7.3.4",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "mui",
+    "component-id",
+    "debug",
+    "visibility",
+    "fab"
+  ],
+  "author": "Pamfilico",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pamfilico/component-id-visibility.git"
+  }
+}

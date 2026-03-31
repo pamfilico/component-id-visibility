@@ -2,6 +2,7 @@
   "name": "@pamfilico/component-id-visibility",
   "version": "1.0.0",
   "description": "Toggle component ID visibility overlay for React/Next.js apps with MUI",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

@@ -9,6 +9,17 @@ interface ComponentIdChipProps {
   componentId: string;
 }
 
+const MAX_LABEL_LENGTH = 20;
+
+function truncateId(id: string): string {
+  if (id.length <= MAX_LABEL_LENGTH) {
+    return id;
+  }
+  const headLength = 10;
+  const tailLength = 6;
+  return `${id.slice(0, headLength)}…${id.slice(-tailLength)}`;
+}
+
 export default function ComponentIdChip({ componentId }: ComponentIdChipProps) {
   const { isVisible } = useComponentId();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
@@ -46,7 +57,8 @@ export default function ComponentIdChip({ componentId }: ComponentIdChipProps) {
   return (
     <>
       <Chip
-        label={componentId}
+        label={truncateId(componentId)}
+        title={componentId}
         icon={<ContentCopyIcon />}
         onClick={handleClick}
         clickable
